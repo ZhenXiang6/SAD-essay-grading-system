@@ -1,0 +1,114 @@
+/* Profile.css - 美化使用者資料與編輯表單 */
+.profile-container {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.profile-container h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.profile-container p {
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.profile-container label {
+  display: block;
+  font-weight: 500;
+  margin: 16px 0 6px;
+  color: #2d3748;
+}
+
+.profile-container input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e0;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.profile-container button {
+  margin-top: 24px;
+  padding: 10px 20px;
+  background-color: #3182ce;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.profile-container button:hover {
+  background-color: #2b6cb0;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-input {
+  padding-right: 40px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e0;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.toggle-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #718096;
+  font-size: 16px;
+  user-select: none;
+}
+
+.avatar-upload {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.avatar-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #3182ce;
+  box-shadow: 0 0 8px rgba(49, 130, 206, 0.5);
+}
+
+.avatar-placeholder {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #718096;
+  font-size: 14px;
+  font-weight: 600;
+  border: 2px dashed #cbd5e0;
+  user-select: none;
+}
+
+/* 調整檔案選擇器 input */
+
+.avatar-upload input[type="file"] {
+  cursor: pointer;
+  font-size: 14px;
+  color: #3182ce;
+}

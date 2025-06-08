@@ -1,0 +1,122 @@
+/* 通用設定 */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* App 頁面整體 */
+.App {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Welcome 頁面樣式 */
+.welcome-container {
+  margin-top: 100px;
+}
+
+.welcome-title {
+  font-size: 2rem;
+  color: #333;
+}
+
+.start-button {
+  margin-top: 30px;
+  padding: 12px 30px;
+  font-size: 18px;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.start-button:hover {
+  background-color: darkorange;
+}
+
+/* HamburgerMenu（漢堡選單）樣式 */
+.hamburger-container {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.hamburger-icon {
+  width: 30px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.bar {
+  width: 100%;
+  height: 4px;
+  background-color: #5b5959;
+  border-radius: 2px;
+}
+
+.menu-dropdown {
+  margin-top: 10px;
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: 40px;
+  left: 0;
+}
+
+.menu-dropdown button {
+  background: none;
+  border: none;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.menu-dropdown button:hover {
+  background-color: #f0f0f0;
+}
+
+/* ImageUploader 頁面樣式 */
+.image-uploader-container {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.preview-image {
+  margin-top: 20px;
+}
+
+.uploaded-img {
+  margin-top: 20px;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.back-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #333;
+}

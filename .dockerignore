@@ -1,0 +1,42 @@
+# Ignore Git files
+.git
+.gitignore
+
+# Ignore environment files
+.env
+.env.*
+
+# Ignore node_modules and build artifacts for frontend
+frontend/node_modules
+frontend/dist
+frontend/build
+frontend/.vite
+
+# Ignore Python cache and virtual environments for backend
+backend/__pycache__
+backend/*.pyc
+backend/*.pyo
+backend/.pytest_cache
+backend/venv
+backend/env
+
+# Ignore logs and uploads (these are mounted as volumes)
+backend/static/uploads
+backend/static/outputs
+logs/
+*.log
+
+# IDE specific files
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Large files that might be generated during training or data processing
+# (These should ideally be managed by Git LFS if committed)
+backend/checkpoints/*.wandb
+backend/checkpoints/*.log

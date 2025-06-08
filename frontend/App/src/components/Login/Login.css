@@ -1,0 +1,99 @@
+.auth-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.auth-container h2 {
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.input-error {
+  border-color: #e53e3e;
+  animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-3px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.auth-button {
+  width: 108%;
+  padding: 14px;
+  font-size: 16px;
+  background-color: #3182ce;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.auth-button:hover {
+  background-color: #3182ce;
+}
+
+.switch-mode {
+  margin-top: 24px;
+  font-size: 14px;
+}
+
+.link {
+  color: #3182ce;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.button {
+  width: 100%;              /* ✅ 和 auth-button 一樣撐滿 */
+  padding: 14px;            /* ✅ 和 auth-button 對齊 */
+  font-size: 18px;          /* ✅ 和 auth-button 對齊 */
+  background-color: #3182ce;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.button:hover {
+  background-color: #2b6cb0;
+}
+
+.error-text {
+  color: #e53e3e;
+  font-size: 13px;
+  margin: -8px 0 12px;
+  text-align: left;
+}

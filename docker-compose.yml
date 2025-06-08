@@ -1,0 +1,41 @@
+version: "3.8"
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ../Dockerfile.frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - app-net
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: ../Dockerfile.backend
+    ports:
+      - "5000:5000"
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - GEMINI_API_URL=${GEMINI_API_URL:-https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent}
+      - FLASK_ENV=${FLASK_ENV:-production}
+      - UPLOAD_FOLDER=${UPLOAD_FOLDER:-static/uploads}
+      - OUTPUT_FOLDER=${OUTPUT_FOLDER:-static/outputs}
+      - OCR_MODEL_PATH=${OCR_MODEL_PATH:-./checkpoints/resnet18_ft_100epoch.pth}
+      - OCR_CLASS_PATH=${OCR_CLASS_PATH:-./checkpoints/class_to_idx.json}
+      - GRID_TOLERANCE=${GRID_TOLERANCE:-10}
+      - MAX_SKEW=${MAX_SKEW:-20.0}
+      - ANGLE_THRESHOLD=${ANGLE_THRESHOLD:-5.0}
+    volumes:
+      - ./backend/static/uploads:/app/static/uploads
+      - ./backend/static/outputs:/app/static/outputs
+      - ./backend/checkpoints:/app/checkpoints
+    networks:
+      - app-net
+    restart: unless-stopped
+
+networks:
+  app-net:
+    driver: bridge
