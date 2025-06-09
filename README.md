@@ -119,7 +119,6 @@ Content-Type: application/json
 SAD-essay-grading-system/
 ├── frontend/                   # React前端應用
 │   ├── src/                    # 源代碼
-│   ├── public/                 # 靜態資源
 │   └── package.json            # 前端依賴
 ├── backend/                    # Flask後端應用
 │   ├── app.py                  # 主應用文件
