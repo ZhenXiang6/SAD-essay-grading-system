@@ -13,7 +13,7 @@ API_URL = os.getenv("GEMINI_API_URL")
 @bp.route("/refine_ocr_text", methods=["POST"])
 def refine_ocr_text():
     try:
-        data = request.get_json()
+        data = request.get_json(force=True)
         if not data or "text" not in data:
             return jsonify({"error": "請提供 text 欄位"}), 400
         
