@@ -19,6 +19,8 @@ services:
       dockerfile: ../Dockerfile.backend
     ports:
       - "5000:5000"
+    env_file:
+      - ./.env
     environment:
       - GEMINI_API_KEY=${GEMINI_API_KEY}
       - GEMINI_API_URL=${GEMINI_API_URL:-https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent}
@@ -34,6 +36,33 @@ services:
       - ./backend/static/uploads:/app/static/uploads
       - ./backend/static/outputs:/app/static/outputs
       - ./backend/checkpoints:/app/checkpoints
+    networks:
+      - app-net
+    restart: unless-stopped
+
+  rag-backend:
+    build:
+      context: ./RAG_small_tutor/backend
+      dockerfile: ../../Dockerfile.rag-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+    volumes:
+      - ./RAG_small_tutor/backend/docs:/app/doc
+      - ./RAG_small_tutor/backend/faiss_index:/app/faiss_index
+    networks:
+      - app-net
+    restart: unless-stopped
+
+  rag-frontend:
+    build:
+      context: ./RAG_small_tutor/frontend
+      dockerfile: ../../Dockerfile.rag-frontend
+    ports:
+      - "8501:8501"
+    depends_on:
+      - rag-backend
     networks:
       - app-net
     restart: unless-stopped

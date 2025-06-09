@@ -12,16 +12,18 @@ from langchain_google_genai import (
     GoogleGenerativeAIEmbeddings,
     ChatGoogleGenerativeAI,
 )
-from langchain.vectorstores import FAISS
+from langchain_community.vectorstores import FAISS
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.chains import ConversationalRetrievalChain
-from langchain.document_loaders import DirectoryLoader, PyPDFLoader
+from langchain_community.document_loaders import DirectoryLoader, PyPDFLoader
 from langchain.prompts import PromptTemplate
 
 # --------- 0. 基本設定 ---------
-os.environ["GOOGLE_API_KEY"] = "AIzaSyCzAVDECY7L-YDdfHevYESC-SDyzHPulKQ"
+# 從環境變量讀取API key，如果沒有則使用默認值
+api_key = os.environ.get("GOOGLE_API_KEY", "AIzaSyCzAVDECY7L-YDdfHevYESC-SDyzHPulKQ")
+os.environ["GOOGLE_API_KEY"] = api_key
 
-genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
+genai.configure(api_key=api_key)
 
 CACHE_PATH = Path("vec_db.pkl")     # 向量庫快取檔
 

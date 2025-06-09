@@ -1,6 +1,6 @@
 FROM python:3.10-slim
 
-# Install system dependencies for OpenCV
+# Install system dependencies for OpenCV and Tesseract OCR
 RUN apt-get update && apt-get install -y \
     libgl1-mesa-glx \
     libglib2.0-0 \
@@ -12,6 +12,9 @@ RUN apt-get update && apt-get install -y \
     libavcodec-dev \
     libavformat-dev \
     libswscale-dev \
+    tesseract-ocr \
+    tesseract-ocr-chi-tra \
+    tesseract-ocr-chi-sim \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app

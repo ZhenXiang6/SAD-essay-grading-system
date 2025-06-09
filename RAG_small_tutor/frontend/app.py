@@ -2,7 +2,7 @@
 import requests
 import streamlit as st
 
-API_URL = "http://localhost:8000/chat"
+API_URL = "http://rag-backend:8000/chat"
 
 st.set_page_config(page_title="RAG Chatbot", page_icon="💬")
 st.title("💬🔍 國寫作文小家教")
